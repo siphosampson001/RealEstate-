@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties | AEL Chihanda Real Estate</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #f99420;;
+            color: #fff;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        #property-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .property-card {
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+            width: calc(33% - 20px);
+        }
+
+        footer {
+            background: #f99420;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>AEL Chihanda Real Estate</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="properties.html">Properties</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="properties">
+        <h2>Our Properties</h2>
+        <div id="property-list"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 AEL Chihanda Real Estate</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+    <script>
+        const properties = [
+            {
+                title: "Luxury Apartment",
+                description: "A beautiful luxury apartment in the city center.",
+                price: "$1,200/month",
+                image: "assets/images/P1.jpg",
+            },
+            {
+                title: "Cozy Cottage",
+                description: "A cozy cottage in a quiet neighborhood.",
+                price: "$900/month",
+                image: "assets/images/P2.jpg",
+            },
+            {
+                title: "Modern Office Space",
+                description: "A modern office space perfect for startups.",
+                price: "$2,000/month",
+                image: "assets/images/P3.jpg",
+            }
+            
+        ];
+
+        function loadProperties() {
+            const propertyList = document.getElementById('property-list');
+            properties.forEach(property => {
+                const propertyCard = document.createElement('div');
+                propertyCard.className = 'property-card';
+                propertyCard.innerHTML = `
+                    <img src="${property.image}" alt="${property.title}" style="width: 50%;">
+                    <h3>${property.title}</h3>
+                    <p>${property.description}</p>
+                    <p><strong>${property.price}</strong></p>
+                `;
+                propertyList.appendChild(propertyCard);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', loadProperties);
+    </script>
+</body>
+</html>

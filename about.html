@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | AEL Chihanda Real Estate</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: #f4f4f4;
+        }
+
+        header {
+            background: #f99420;
+            color: #fff;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        section {
+            flex: 1;
+            padding: 20px;
+            background: url('assets/images/P1.jpg') no-repeat center center/cover; /* Add your background image */
+            background-size: cover; /* Ensure the image covers the section */
+        }
+
+        .core-value {
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
+            text-align: center;
+            border-radius: 5px;
+            width: 80%; /* Reduced width */
+            max-width: 600px; /* Set a max width for better control */
+            margin-left: auto; /* Center align */
+            margin-right: auto; /* Center align */
+        }
+
+        footer {
+            background: #f99420;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>AEL Chihanda Real Estate</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="properties.html">Properties</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Welcome to AEL Chihanda Real Estate, where we provide exceptional real estate services.</p>
+        <p>Our team is dedicated to helping you find your dream property with expertise and professionalism.</p>
+        
+        <h3>Core Values</h3>
+        <div id="core-values-list"></div>
+
+        <h3>Integrity</h3>
+        <p>At AEL Chihanda Real Estate, integrity is the foundation of our business. We believe in being honest, transparent, and accountable in all our interactions, ensuring that our clients can trust us to represent their best interests.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 AEL Chihanda Real Estate</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+    <script>
+        const coreValues = [
+            "Customer Commitment: We develop relationships that make a positive difference in our customers' lives.",
+            "Integrity: We uphold the highest standards of integrity in all our actions.",
+            "Teamwork: We work together, across boundaries, to meet the needs of our customers and to help the company win.",
+            "Respect: We value our people, encourage their development, and reward their performance.",
+            "Excellence: We strive to be the best at doing what matters most."
+        ];
+
+        function loadCoreValues() {
+            const coreValuesList = document.getElementById('core-values-list');
+            coreValues.forEach(value => {
+                const valueCard = document.createElement('div');
+                valueCard.className = 'core-value';
+                valueCard.innerHTML = `<p>${value}</p>`;
+                coreValuesList.appendChild(valueCard);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadCoreValues();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | AEL Chihanda Real Estate</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: #f99420; /* Semi-transparent for visibility */
+            color: #fff;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        section {
+            flex: 1;
+            padding: 20px;
+            position: relative; /* For positioning the background */
+            z-index: 1; /* Above background */
+            overflow: hidden; /* Prevent overflow issues */
+            background: url('assets/images/services.jpg') no-repeat center center/cover; /* Set the background image */
+            animation: moveBackground 30s linear infinite; /* Animation for motion */
+        }
+
+        .service-card {
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+            width: calc(33% - 20px);
+            float: left;
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
+        }
+
+        footer {
+            background: #f99420;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+        }
+
+        @keyframes moveBackground {
+            from { background-position: 0 0; }
+            to { background-position: 100% 0; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>AEL Chihanda Real Estate</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="properties.html">Properties</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="index.html#contact>Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div id="service-list"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 AEL Chihanda Real Estate</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+    <script>
+        const services = [
+            "Property Consultancy",
+            "Property Valuation",
+            "Property Conveyancing",
+            "Property Verification",
+            "Facilitates Ownership Documents",
+            "On-Site Location Verification",
+            "Intermediary and Conflict Resolution",
+            "Property Registration",
+            "Paperwork Verification",
+            "Property Security",
+            "Buying and Selling of Property"
+        ];
+
+        function loadServices() {
+            const serviceList = document.getElementById('service-list');
+            services.forEach(service => {
+                const serviceCard = document.createElement('div');
+                serviceCard.className = 'service-card';
+                serviceCard.innerHTML = `<h3>${service}</h3>`;
+                serviceList.appendChild(serviceCard);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', loadServices);
+    </script>
+</body>
+</html>

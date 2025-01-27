@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AEL Chihanda Real Estate</title>
+    <link rel="stylesheet" href="style/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: #f4f4f4;
+        }
+
+        header {
+            background: #f99420;
+            color: #fff;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        #hero {
+            background: url('assets/images/aboutus.jpg') no-repeat center center/cover;
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        #hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        #hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background: #fff;
+            color: #f99420;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #f99420;
+            color: #fff;
+        }
+
+        #services {
+            padding: 40px 20px;
+            text-align: center;
+            background: #fff;
+            color: #000;
+        }
+
+        #services h2 {
+            margin-bottom: 20px;
+        }
+
+        #services ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #services li {
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+
+        #contact {
+            padding: 40px 20px;
+            text-align: center;
+            background: #fff;
+            color: #000;
+            border: 1px solid #f99420; /* Optional border for distinction */
+        }
+
+        #contact h2 {
+            margin-bottom: 20px;
+        }
+
+        #contact form {
+            margin-top: 20px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #contact input,
+        #contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #contact button {
+            background: #f99420;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        #contact button:hover {
+            background: #fff;
+            color: #f99420;
+        }
+
+        footer {
+            background: #f99420;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>AEL Chihanda Real Estate</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="properties.html">Properties</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h2>Your Trusted Partner in Property Management</h2>
+        <p>Experts in property management</p>
+        <a href="properties.html" class="btn">Search Properties</a>
+    </section>
+
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Hotline: <strong>+263786187793</strong></p>
+        <p>Calls: <strong>+263775867108</strong>, <strong>+263778483627</strong></p>
+        <form id="contact-form" action="mailto:youremail@example.com" method="post" enctype="text/plain">
+            <input type="text" placeholder="Your Name" name="name" required>
+            <input type="email" placeholder="Your Email" name="email" required>
+            <textarea placeholder="Your Message" name="message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 AEL Chihanda Real Estate</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>
