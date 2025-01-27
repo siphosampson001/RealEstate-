@@ -12,11 +12,11 @@
             padding: 0;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
+            min-height: 100vh; /* Ensure the body takes the full height */
         }
 
         header {
-            background: #f99420; /* Semi-transparent for visibility */
+            background: #f99420; /* Header background */
             color: #fff;
             padding: 1rem;
             display: flex;
@@ -40,13 +40,14 @@
         }
 
         section {
-            flex: 1;
-            padding: 20px;
-            position: relative; /* For positioning the background */
-            z-index: 1; /* Above background */
-            overflow: hidden; /* Prevent overflow issues */
-            background: url('assets/images/services.jpg') no-repeat center center/cover; /* Set the background image */
-            animation: moveBackground 30s linear infinite; /* Animation for motion */
+            flex: 1; /* Allow the section to grow and fill available space */
+            padding: 40px; /* Increased padding for clarity */
+            position: relative;
+            z-index: 1; /* Ensure section is above background */
+            background: rgb(255, 255, 255); /* White background for readability */
+            margin: 20px; /* Margin for spacing */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 2px 20px rgba(12, 12, 12, 0); /* Subtle shadow for depth */
         }
 
         .service-card {
@@ -55,7 +56,9 @@
             padding: 10px;
             width: calc(33% - 20px);
             float: left;
-            background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
+            background: rgba(255, 255, 255, 0.8); /* Slightly transparent card background */
+            border-radius: 5px; /* Rounded corners for cards */
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2); /* Shadow on cards */
         }
 
         footer {
@@ -66,9 +69,23 @@
             width: 100%;
         }
 
+        /* Background image styling */
+        .moving-background {
+            background: url('assets/images/services.jpg') no-repeat center center/cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0; /* Behind all other content */
+            animation: moveBackground 30s linear infinite; /* Animation for motion */
+            opacity: 0.8;
+        }
+
         @keyframes moveBackground {
-            from { background-position: 0 0; }
-            to { background-position: 100% 0; }
+            0% { background-position: 0 0; }
+            50% { background-position: 100% 0; }
+            100% { background-position: 0 0; }
         }
     </style>
 </head>
@@ -83,20 +100,16 @@
                 <li><a href="properties.html">Properties</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="index.html#contact>Contact</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="services">
+        <div class="moving-background"></div> <!-- Background image in motion -->
         <h2>Our Services</h2>
         <div id="service-list"></div>
     </section>
-
-    <footer>
-        <p>&copy; 2025 AEL Chihanda Real Estate</p>
-        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-    </footer>
 
     <script>
         const services = [
@@ -125,5 +138,10 @@
 
         document.addEventListener('DOMContentLoaded', loadServices);
     </script>
+
+    <footer>
+        <p>&copy; 2025 AEL Chihanda Real Estate</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
 </body>
 </html>
